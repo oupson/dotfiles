@@ -1,0 +1,49 @@
+format = """$username$hostname$shell$directory$git_branch$git_commit$git_state$git_status$cmd_duration$jobs$line_break$status$character"""
+
+[username]
+show_always = true
+format = '[$user]($style)@'
+style_user = "bold yellow"
+style_root = "bold red"
+
+[hostname]
+ssh_only = false
+ssh_symbol = "ssh://"
+format = '[$ssh_symbol$hostname]($style)'
+style = "bold yellow"
+
+[shell]
+disabled = false
+format = ':[$indicator]($style) '
+style = "bold yellow"
+
+[directory]
+truncation_length = 8
+truncate_to_repo = false
+
+[git_branch]
+format = "[$branch]($style)"
+
+[git_commit]
+format = '[:$hash$tag]($style)'
+style = 'bold purple'
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = 'bold yellow'
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
+
+[status]
+disabled = false
+recognize_signal_code = false
+format = '[$status]($style) '
